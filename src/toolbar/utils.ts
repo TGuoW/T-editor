@@ -18,12 +18,6 @@ export function createToolBarDropList (type, innerHTML, command) {
   dropList.className = 'drop-list';
   dropList.innerHTML = innerHTML;
 
-  div.addEventListener('mouseover', (e) => {
-    const rect = div.getBoundingClientRect();
-    dropList.style.top = rect.y + rect.height + 'px';
-    dropList.style.left = rect.x + 'px';
-    div.appendChild(dropList);
-  });
   div.addEventListener('click', (e) => {
     command(e);
   });
@@ -33,6 +27,13 @@ export function createToolBarDropList (type, innerHTML, command) {
   div.addEventListener('mouseleave', (e) => {
     dropList.remove();
   });
+  div.addEventListener('mouseover', (e) => {
+    const rect = div.getBoundingClientRect();
+    dropList.style.top = rect.y + rect.height + 'px';
+    dropList.style.left = rect.x + 'px';
+    div.appendChild(dropList);
+  });
+
   div.innerHTML = svgs[type];
   return div;
 }

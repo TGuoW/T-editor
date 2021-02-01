@@ -1,9 +1,10 @@
 interface ISelectionProps {
   body: HTMLElement;
 }
+
 export class Selection {
   private range: Range | null = null;
-  
+
   constructor (private props: ISelectionProps) {
     document.addEventListener('selectionchange', this._handleSelectionChange);
   }

@@ -42,6 +42,7 @@ export class Editor {
     this.container.appendChild(div);
   }
 
+  // todo: 这个方法不应该在editor内
   private _initToolBar(btns) {
     const toolbar = document.createElement('div');
     toolbar.className = 'editor-toolbar';
@@ -50,7 +51,11 @@ export class Editor {
     this.container.appendChild(toolbar);
   }
 
-  execCommand() {
-    
+  getContent() {
+    return this.body!.innerHTML;
+  }
+
+  setContent(html: string) {
+    this.body!.innerHTML = html;
   }
 }
