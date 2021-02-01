@@ -1,0 +1,37 @@
+.editor-toolbar {
+  border-bottom: 1px solid grey;
+  display: flex;
+}
+
+.editor-toolbar .btn {
+  height: 20px;
+  width: 20px;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.editor-toolbar .btn:hover {
+  background: rgb(184, 184, 184);
+}
+
+.editor-toolbar .drop-list {
+  position: absolute;
+  background: #fff;
+  border: 1px solid grey;
+}
+
+.editor-toolbar .drop-list .drop-row {
+  display: flex;
+}
+
+.editor-toolbar .drop-list .drop-item {
+  width: 20px;
+  height: 20px;
+  margin: 4px 4px;
+  font-size: 16px;
+  line-height: 20px;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 2px;
+  cursor: pointer;
+  text-align: center;
+}

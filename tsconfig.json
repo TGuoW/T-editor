@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types",
+      "typings",
+    ],
+    "module": "esnext",
+    "lib": [
+      "esnext",
+      "dom",
+    ],
+    "outDir": "dist",
+    "sourceMap": true,
+    "jsx": "react-native",
+    "target": "es2015",
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "allowJs": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+  },
+  "files": ["src/typings/index.d.ts"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "config",
+    "bin",
+    "scripts",
+    "jest",
+    "tmp",
+    "**/**/dist/**/*",
+    "**/*.js",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+  ]
+}
