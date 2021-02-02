@@ -58,4 +58,18 @@ export class Editor {
   setContent(html: string) {
     this.body!.innerHTML = html;
   }
+
+  isFocus() {
+    return (
+      document.activeElement === this.body ||
+      this.body!.contains(document.activeElement)
+    );
+  }
+
+  execCommand(commandId, showUI?, value?) {
+    if (!this.isFocus()) {
+      this.selection.setSelection();
+    }
+    document.execCommand(commandId, showUI, value);
+  }
 }
