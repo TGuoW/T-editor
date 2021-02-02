@@ -7,24 +7,24 @@ import {
 } from './utils';
 
 export const Toolbar = {
-  bold () {
+  bold (editor) {
     return createToolBarButton('bold', () => {
-      document.execCommand('bold');
+      editor.execCommand('bold');
     })
   },
-  color (colorMap: string[][]) {
+  color (editor, colorMap: string[][]) {
     return createToolBarDropList('color', renderColorTable(colorMap), (e: MouseEvent) => {
       const color = (e.target as HTMLElement).getAttribute('data-color');
       if (color) {
-        document.execCommand('foreColor', false, color);
+        editor.execCommand('foreColor', false, color);
       }
     });
   },
-  heading (headings: string[]) {
+  heading (editor, headings: string[]) {
     return createToolBarDropList('heading', renderHeadingList(headings), (e) => {
       const heading = (e.target as HTMLElement).getAttribute('data-heading');
       if (heading) {
-        document.execCommand('formatBlock', false, heading);
+        editor.execCommand('formatBlock', false, heading);
       }
     })
   },
